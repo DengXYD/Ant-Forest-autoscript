@@ -40,13 +40,13 @@
 在 Unlock.js 中，按照以下格式扩展：
 
 ```javascript
-var Devices = { 
+var Devices = {
   device_1: function(obj) {
     this.__proto__ = obj;
 
     this.unlock = function(password) {
       if (typeof password !== "string") throw new Error("密码应为字符串！");
-      
+
       // 此处为解锁的代码
 
       return this.check_unlock();
@@ -83,7 +83,7 @@ var MyDevice = Devices.device_1;
 
 # CHANGELOG
 
-- 2019/1/31 
+- 2019/1/31
   - ~~发现识别能量罩时采用的函数不合适~~（使用了同步获取 toast 的方法，会卡住，已修正）
   - ~~帮助好友收取时，默认所有能量球都各点击一遍，效率太低~~（已修正）
   - 重构代码，添加注释
@@ -92,10 +92,10 @@ var MyDevice = Devices.device_1;
   - ~~Toast 监听器超过10过导致报错~~（已修正）
   - ~~帮助好友收取时有时候会失败~~（因为控件下方文字闪烁导致，已修正）
   - 不限制监听器数量并且每次运行完成后清空监听器
-  
+
 - 2019/2/2
   - ~~自己的倒计时减为0时会结束收取而不是立马收取下一次~~（已修正）
-  
+
 - 2019/2/5
   - ~~实际运行中安卓7.0以下会报错~~（已修正）
 
@@ -130,3 +130,6 @@ var MyDevice = Devices.device_1;
 
 - 2019/3/20
   - 重复运行脚本会报错，因此增加脚本重复运行检查功能
+
+- 2019/5/18
+  - 修复最新版蚂蚁森林无法运行的问题
